@@ -12,3 +12,7 @@ class Booking(models.Model):
     date = models.DateField()
     time = models.TimeField()
     special_requirements = models.TextField()
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["time"]
