@@ -13,3 +13,6 @@ class BookingAdmin(admin.ModelAdmin):
 
     def approve_booking(self, request, queryset):
         queryset.update(approved=True)
+
+    def make_vip(self, request, queryset):
+        queryset.update(vip=True)
