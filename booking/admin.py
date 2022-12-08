@@ -10,3 +10,6 @@ class BookingAdmin(admin.ModelAdmin):
     search_fields = ['date', 'time', 'first_name', 'last_name']
     list_filter = ('approved', 'vip')
     actions = ['approve_booking', 'make_vip']
+
+    def approve_booking(self, request, queryset):
+        queryset.update(approved=True)
