@@ -25,3 +25,15 @@ class BookingDetail(View):
                 "booking": booking,
             },
         )
+
+    def post(self, request, first_name, *args, **kwargs):
+        queryset = Booking().objects.filter(approved=True)
+        booking = get_object_or_404(queryset, first_name=first_name)
+
+        return render(
+            request,
+            "booking_detail.html",
+            {
+                "booking": booking,
+            },
+        )
