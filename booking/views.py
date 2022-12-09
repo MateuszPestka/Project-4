@@ -20,7 +20,7 @@ class BookingDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "booking_detail.html",
             {
                 "booking": booking,
             },
